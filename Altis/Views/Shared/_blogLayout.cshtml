@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="altis, psikoloji, kurumsal, danışmanlık, seminer, öğrenme güçlüğü, dikkat eksikliği, disleksi, hiperaktivite, aşırı hareketlilik, üstün yetenek, üstün zeka, gelişim geriliği, unutkanlık, demans, alzheimer, aile terapisi, oyun terapisi, nöropsikoloji, baş ağrısı, nöroloji, davranış bozukluğu, parkinson, epilepsi " />
+    <meta name="description" content="Altis; Çocuk, genç, yetişkin ve yaşlılık dönemlerinde karşılaşılabilecek öğrenme, dikkat, zihinsel gelişim, unutma sorunları,  aile ve sosyal ilişkiler konularında çalışmalarını sürdürmektedir. Sitede ayrıntılı bilgilere ulaşabilirsiniz.">
+    <meta name="author" content="lefistanbul">
+    <title>@ViewBag.Title | Altis İletişim ve Genel Danışmanlık</title>
+
+    <!-- core CSS -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="~/Content/images/ico/favicon.png">
+</head>
+<body style="background:rgb(242, 242, 242)">
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <a class="glyphicon glyphicon-phone"></a>
+                        <span style="color:#808080">+90(216)3689001</span>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                        <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/altisdanisman/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/altisdanisman"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/altisdanisman"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://tr.linkedin.com/in/altis-dan%C4%B1%C5%9Fmanl%C4%B1k-35a308b2"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCY3gZSBnGUgUfokXLrvH0rg"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://tr.pinterest.com/altisdanisman/"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://altis2.mikrooplazma.com/"><img src="~/Content/images/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li id="Anasayfa"><a href="/">Ana Sayfa</a></li>
+                        <li id="Blog"><a href="/Blog">Blog</a></li>
+                        <li id="Foto"><a href="/Blog/Foto">Fotoğraflar</a></li>
+                        <li id="Video"><a href="/Blog/Video">Video</a></li>
+                        <li id="Haberler"><a href="/Blog/Haberler">Haberler</a></li>
+                        <li id="Makaleler"><a href="/Blog/Makaleler">Makaleler</a></li>
+                        <li id="Seminer"><a href="/Blog/Seminer">Seminer</a></li>
+                        <li id="Etkinlik"><a href="/Blog/Etkinlik">Etkinlik</a></li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+       
+    </header><!--/header-->
+    <div class="container" >
+    
+        <br>
+        <br>
+        <div class="col-sm-9">
+           
+            @RenderBody()
+        </div>
+        
+        <div class="col-sm-3">
+       
+
+
+                <div class="row">
+                    <br>
+
+               
+
+                    <form class="navbar-form" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Ara">
+                        </div>
+                        <button type="submit" class="btn btn-default text-center">
+                            <a class="glyphicon glyphicon-search"></a>
+
+                        </button>
+                    </form>
+
+                    <!--/.search-->
+                    <br>
+                    <hr>
+                </div>
+                <div class="row">
+
+                    <button onclick="parent.location='https://drive.google.com/file/d/0B69Tmv7eKRhjVW44M1lsZ1FXaHc'" data-anchor="" class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+                        <span class="screen-reader-text">Kataloğu İncele</span>
+
+                    </button>
+                    <br>
+
+                    <hr>
+
+
+                </div>
+                <div class="row">
+                    <form action="/Blog/MailKayit" method="post">
+                        <label>E-MAİL ABONELİĞİ</label>
+                        <br/>
+                        <input type="text" name="email" placeholder="E-Mail adresiniz.">
+                        <br>
+                        
+                        <input type="submit" value="Kayit ol" class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+                    </form>
+                    <br>
+
+                    <hr>
+
+                </div>
+            </div>
+     
+       
+    </div>
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2017 - <a>Altis | İletişim ve Genel Danışmanlık</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="~Content/http://altis2.mikrooplazma.com/">Ana Sayfa</a></li>
+                        <li><a href="~Content/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="~Content/http://altis3.mikrooplazma.com/">Blog</a></li>
+                        <li><a href="~Content/iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</body>
+</html>
+<script src="~/Content/js/jquery.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/jquery.prettyPhoto.js"></script>
+<script src="~/Content/js/jquery.isotope.min.js"></script>
+<script src="~/Content/js/myJs.js"></script>
+<script src="~/Content/js/main.js"></script>
+<script src="~/Content/js/wow.min.js"></script>
+<script type="text/javascript" src="http://www.webkodu.com/kod-kaynak/yukari-cik/wk-yukari-cik-61.js"></script>
+@RenderSection("scripts", required: false)

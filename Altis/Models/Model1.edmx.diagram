@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e73e57bedc7c414d9019f313b580a8e8" Name="Diagram1">
+        <EntityTypeShape EntityType="AltisModel.aspnet_Applications" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_Membership" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_Paths" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_Profile" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_Roles" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_Users" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.aspnet_WebEvent_Events" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.Etkinlik" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.Seminer" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AltisModel.Yazar" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Me__Appli__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Pa__Appli__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Ro__Appli__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Us__Appli__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Me__UserI__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Pe__PathI__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Pe__PathI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Pe__UserI__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.FK__aspnet_Pr__UserI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="AltisModel.aspnet_UsersInRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AltisModel.MakalelerTB" Width="1.5" PointX="10.5" PointY="14.875" />
+        <AssociationConnector Association="AltisModel.FK_MakalelerTB_aspnet_Users" />
+        <AssociationConnector Association="AltisModel.FK_Etkinlik_aspnet_Users" />
+        <EntityTypeShape EntityType="AltisModel.Fotograf" Width="1.5" PointX="10.5" PointY="22.125" />
+        <EntityTypeShape EntityType="AltisModel.HaberlerTB" Width="1.5" PointX="10.5" PointY="18.75" />
+        <AssociationConnector Association="AltisModel.FK_Fotograf_aspnet_Users" />
+        <AssociationConnector Association="AltisModel.FK_HaberlerTB_aspnet_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

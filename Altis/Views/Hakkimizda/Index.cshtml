@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Hakkımızda";
+}
+
+
+<section id="middle">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 wow fadeInDown">
+                <div class="skill">
+                    <h2>Altis Hakkında</h2>
+                    <p>Altis; 1989 yılında Dr. Bülent Madi tarafından nöroloji ve sanat çalışmalarının birlikteliği amacıyla kurulmuştur. İki yıl süren çalışmalarının ardından, 1991 yılında diğer bilim dalları ile interdisipliner çalışmaya başlanmıştır. Tüm yaşam dönemlerinde karşılaşılabilecek nörolojik, gelişimsel ve psikolojik sorunların değerlendirilmesi, gelişimsel ve psikolojik destek programlarının planlanması konularında çalışmaktadır. Nörolog, psikiyatrist, psikolog, psikolojik danışman, özel eğitim uzmanı, dil ve konuşma terapisti, fizyoterapist ve müzik eğitmenlerinden oluşan uzman kadro ve uzman konsültanları ile disiplinler arası anlayışla çalışmalarını sürdürmektedir.</p>
+
+
+                </div>
+            </div><!--/.col-sm-6-->
+
+            <div class="col-sm-6 wow fadeInDown">
+                <div class="accordion">
+                    <p>
+                        <div class="panel-group" id="accordion1">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading active">
+                                    <h3 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#calismasistemimiz" href="#calismasistemimiz">
+                                            Çalışma Sistemimiz
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div id="calismasistemimiz" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                    <p> •	Altis Danışmanlık olarak haftanın ilk altı günü, 10.00 - 19.30 saatleri arasında hizmet veriyoruz.</p>
+                    <p> •	Görüşmelerimiz tüm dünyada olduğu gibi 50 dakika sürmektedir. </p>
+                    <p> •	Testlerin özelliğine göre 30-120 dakika sürebilir. </p>
+                    <p> •	Randevu iptallerinin en az bir gün önceden bildirilmesini, diğer randevu taleplerinin önceliğini karşılayabilmemiz için rica ediyoruz. </p>
+                </div>
+            </div>
+        </div>
+    </div><!--/#accordion1-->
+    </div>
+    </div>
+
+    </div><!--/.row-->
+    </div><!--/.container-->
+</section><!--/#middle-->
+
+@section  scripts{
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#Hakkimizda").attr("class", "active");
+        });
+    </script>
+    
+    
+    }
+

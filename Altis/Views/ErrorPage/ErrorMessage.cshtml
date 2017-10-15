@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ErrorMessage";
+    Layout = "~/Views/Shared/Error.cshtml";
+}
+
+
+    @if (ViewBag != null)
+    {
+       
+            <h2 class="text-center" style="color:#2c2c2c;margin:0 auto;">
+                @ViewBag.ErrorMessage
+            </h2>
+        
+    }
+
+

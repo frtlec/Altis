@@ -1,0 +1,40 @@
+﻿@model Altis.ViewModels.PageListForMakale
+@using PagedList;
+@using PagedList.Mvc;
+@foreach (var item in Model.MakalelerPageList)
+{
+    <div class="blog">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center">
+                            <div class="entry-meta">
+                                <span id="publish_date">@item.EklenmeTarihi.ToShortDateString()</span>
+                                <span><i class="fa fa-user"></i> <a href="#">@item.Ad.ToLower() @item.Soyad</a></span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-10 blog-content">
+                            <a href="#"><img class="img-responsive img-blog" src="~/Content/images/blog/blog1.jpg" width="100%" alt="" /></a>
+                            <h2><a href="blog-item.html">@item.MakaleBaslik</a></h2>
+                            <h3>@item.MakaleIcerik</h3>
+                            <a class="btn btn-primary readmore" href="/blog/Makale/@item.MakeleID">Devamını Oku <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.blog-item-->
+
+
+
+            </div><!--/.col-md-8-->
+        </div>
+    </div>
+
+}
+@Html.PagedListPager(Model.MakalelerPageList, page => Url.Action("Makaleler",new RouteValueDictionary{
+    { "Page",page}
+
+    }),PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions {
+        UpdateTargetId="ajax-main" 
+
+    }))

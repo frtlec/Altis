@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "İletisim";
+}
+
+<section id="contact-info">
+    <div class="center">
+        <h2>Altis İletişim</h2>
+        <p>Altis Danışmanlık olarak bebeklik, çocukluk, ergenlik, yetişkinlik ve yaşlılık dönemlerinde ihtiyaç duyduğunuzda sizlerle olmayı amaçlıyoruz.</p>
+        <p>Bizimle paylaşmak istediğiniz konular, sormak istedikleriniz için aşağıdaki iletişim bilgilerimizi kullanabilirsiniz. İyi günler... </p>
+    </div>
+    <div class="gmap-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <div class="gmap">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12046.40727933174!2d29.074222809814458!3d40.99019909357746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x788ece5ff82a5d54!2zQWx0aXMgxLBsZXRpxZ9pbSB2ZSBHZW5lbCBEYW7EscWfbWFubMSxaw!5e0!3m2!1str!2str!4v1496921948404" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 map-content">
+                    <ul class="row">
+                        <li class="col-sm-6">
+                            <address>
+                                <h5>Avrupa Yakası'ndan Ulaşım:</h5>
+                                <p>Metro, metrobüs, otobüs vs. gibi ulaşım araçlarının geçtiği güzergah ve duraklar buraya eklenecektir.</p>
+
+                            </address>
+
+                            <address>
+                                <h5>Anadolu Yakası'ndan Ulaşım</h5>
+                                <p>Metro, metrobüs, otobüs vs. gibi ulaşım araçlarının geçtiği güzergah ve duraklar buraya eklenecektir.</p>
+                            </address>
+
+
+                        </li>
+
+
+                        <li class="col-sm-6">
+                            <address>
+                                <h5>Altis:</h5>
+                                <p>Telefon: 0 216 368 90 01<br>
+                                <p>Telefon: 0 216 368 90 02<br>
+                                <p>Fax: 0 216 368 90 05 </p>
+                            </address>
+
+                            <address>
+                                <h5>Dr. Bülent Madi Muayenehanesi:</h5>
+                                <p>Telefon: 0 216 368 51 51<br>
+                                <p>Telefon: 0 216 369 42 42<br>
+                            </address>
+
+                            <address>
+                                <h5>E-Posta:</h5>
+                                <p>info@altis.gen.tr<br>
+                                <p>altis@altis.gen.tr<br>
+                            </address>
+
+                            <address>
+                                <h5>Adres:</h5>
+                                <p>Süleyman Nazif Sokak No: 8 Koşuyolu, Kadıköy / İstanbul (Yaşam Parkı ve Koşuyolu Mahalle Evinin Yan Sokağı, Eski Kalp Hastanesinin Karşı Sokağı)</p>
+
+
+                            </address>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  <!--/gmap_area -->
+
+@section  scripts{
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#iletisim").attr("class", "active");
+        });
+    </script>
+
+
+}

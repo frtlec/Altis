@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Makale";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+@model Altis.Models.MakalelerTB
+
+
+<div class="container">
+    <div class="row">
+       yazar:@Model.aspnet_Users.Ad 
+        @Model.aspnet_Users.Soyad
+        Baslik:@Model.MakaleBaslik
+
+        <div id="icerik">
+
+        </div>
+        
+
+
+    </div>
+
+
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+            $(document).ready(function() {
+                console.log("sa");
+                $("#icerik").html(@Html.Raw(Json.Encode(Model.HTML)));
+            });
+
+
+
+     </script>
+    
+    }

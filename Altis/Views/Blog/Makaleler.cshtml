@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Makaleler";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+@model  Altis.ViewModels.PageListForMakale
+<section id="blog" class="container">
+
+    @using (Ajax.BeginForm("Index", "Makaleler", FormMethod.Post, new AjaxOptions { OnSuccess = "loadMakaleler" }))
+    {
+
+    }
+
+    <div id="ajax-main">
+        @Html.Partial("_Makaleler", @Model)
+    </div>
+
+
+
+</section>
+@section  scripts{
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#Makaleler").attr("class", "active");
+        });
+
+    </script>
+
+
+}
