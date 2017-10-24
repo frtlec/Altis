@@ -11,7 +11,7 @@ namespace Altis.ViewModels
         public int MakeleID { get; set; }
         public System.Guid UserID { get; set; }
         public string MakaleBaslik { get; set; }
-        public string MakaleIcerik { get; set; }
+        public string MakaleOnyazi { get; set; }
         public string OneCikanGorsel { get; set; }
         public System.DateTime EklenmeTarihi { get; set; }
         public System.DateTime SonGuncelleme { get; set; }

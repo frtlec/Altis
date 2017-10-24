@@ -149,24 +149,48 @@
     <Key>
       <PropertyRef Name="FotoID" />
     </Key>
-    <Property Name="FotoID" Type="int" Nullable="false" />
+    <Property Name="FotoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FotoBaslik" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="FotoAciklama" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FotoKategoriID" Type="int" />
     <Property Name="EklenmeTarihi" Type="date" Nullable="false" />
     <Property Name="SonGuncelleme" Type="date" Nullable="false" />
+    <Property Name="FotoURLID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FotoKategori">
+    <Key>
+      <PropertyRef Name="FotoKategoriID" />
+    </Key>
+    <Property Name="FotoKategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="nvarchar" MaxLength="50" />
+    <Property Name="FotoClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="FotoKatAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FotoKatAciklama" Type="nvarchar" MaxLength="3950" Nullable="false" />
+    <Property Name="EklenmeTarihi" Type="date" Nullable="false" />
     <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="HaberlerTB">
     <Key>
       <PropertyRef Name="HaberID" />
     </Key>
-    <Property Name="HaberID" Type="int" Nullable="false" />
+    <Property Name="HaberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HaberBaslik" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="HaberAciklama" Type="nvarchar" MaxLength="3540" />
     <Property Name="HaberIcerik" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OneCikanGorsel" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="EklenmeTarihi" Type="date" Nullable="false" />
     <Property Name="SonGuncelleme" Type="date" Nullable="false" />
     <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hizmetlerimiz">
+    <Key>
+      <PropertyRef Name="HizmetlerimizID" />
+    </Key>
+    <Property Name="HizmetlerimizID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="HTML" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OneCikanGorsel" Type="nvarchar" MaxLength="250" Nullable="false" />
   </EntityType>
   <EntityType Name="MakalelerTB">
     <Key>
@@ -181,16 +205,21 @@
     <Property Name="EklenmeTarihi" Type="date" Nullable="false" />
     <Property Name="SonGuncelleme" Type="date" Nullable="false" />
   </EntityType>
-  <EntityType Name="Seminer">
+  <EntityType Name="SeminerTB">
     <Key>
       <PropertyRef Name="SeminerID" />
     </Key>
     <Property Name="SeminerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SeminerBaslik" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="Adres" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="SeminerAciklama" Type="nvarchar" MaxLength="3950" Nullable="false" />
+    <Property Name="HTML" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OneCikanGorsel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EklenmeTarih" Type="date" Nullable="false" />
+    <Property Name="SonGuncelleme" Type="date" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yer" Type="nvarchar" MaxLength="3950" Nullable="false" />
     <Property Name="Zaman" Type="date" Nullable="false" />
-    <Property Name="SeminerAciklama" Type="varchar" MaxLength="450" Nullable="false" />
-    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -364,6 +393,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Fotograf_FotoKategori">
+    <End Role="FotoKategori" Type="Self.FotoKategori" Multiplicity="0..1" />
+    <End Role="Fotograf" Type="Self.Fotograf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FotoKategori">
+        <PropertyRef Name="FotoKategoriID" />
+      </Principal>
+      <Dependent Role="Fotograf">
+        <PropertyRef Name="FotoKategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FotoKategori_aspnet_Users">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="FotoKategori" Type="Self.FotoKategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="FotoKategori">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_HaberlerTB_aspnet_Users">
     <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
     <End Role="HaberlerTB" Type="Self.HaberlerTB" Multiplicity="*" />
@@ -388,6 +441,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_SeminerTB_aspnet_Users">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="SeminerTB" Type="Self.SeminerTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SeminerTB">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="AltisModelStoreContainer">
     <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
@@ -402,9 +467,11 @@
     <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Etkinlik" EntityType="Self.Etkinlik" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fotograf" EntityType="Self.Fotograf" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FotoKategori" EntityType="Self.FotoKategori" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HaberlerTB" EntityType="Self.HaberlerTB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hizmetlerimiz" EntityType="Self.Hizmetlerimiz" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MakalelerTB" EntityType="Self.MakalelerTB" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Seminer" EntityType="Self.Seminer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeminerTB" EntityType="Self.SeminerTB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Yazar" EntityType="Self.Yazar" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__aspnet_Me__Appli__2D27B809" Association="Self.FK__aspnet_Me__Appli__2D27B809">
@@ -459,6 +526,14 @@
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="Fotograf" EntitySet="Fotograf" />
     </AssociationSet>
+    <AssociationSet Name="FK_Fotograf_FotoKategori" Association="Self.FK_Fotograf_FotoKategori">
+      <End Role="FotoKategori" EntitySet="FotoKategori" />
+      <End Role="Fotograf" EntitySet="Fotograf" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FotoKategori_aspnet_Users" Association="Self.FK_FotoKategori_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="FotoKategori" EntitySet="FotoKategori" />
+    </AssociationSet>
     <AssociationSet Name="FK_HaberlerTB_aspnet_Users" Association="Self.FK_HaberlerTB_aspnet_Users">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="HaberlerTB" EntitySet="HaberlerTB" />
@@ -466,6 +541,10 @@
     <AssociationSet Name="FK_MakalelerTB_aspnet_Users" Association="Self.FK_MakalelerTB_aspnet_Users">
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="MakalelerTB" EntitySet="MakalelerTB" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeminerTB_aspnet_Users" Association="Self.FK_SeminerTB_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="SeminerTB" EntitySet="SeminerTB" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

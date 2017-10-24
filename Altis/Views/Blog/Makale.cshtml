@@ -4,24 +4,35 @@
     Layout = "~/Views/Shared/_blogLayout.cshtml";
 }
 @model Altis.Models.MakalelerTB
+<div class="container ">
+    <div class="blog makaleicerik">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center">
+                            <div class="entry-meta">
+                                <span id="publish_date">@Model.EklenmeTarihi.ToShortDateString()</span>
+                                <span><i class="fa fa-user"></i> <a href="#">@Model.aspnet_Users.Ad.ToLower() @Model.aspnet_Users.Soyad</a></span>
+                            </div>
+                        </div>
 
-
-<div class="container">
-    <div class="row">
-       yazar:@Model.aspnet_Users.Ad 
-        @Model.aspnet_Users.Soyad
-        Baslik:@Model.MakaleBaslik
-
-        <div id="icerik">
-
+                        <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown">
+                           
+                            <div id="icerik">
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
         </div>
-        
-
-
     </div>
-
-
 </div>
+  
+
+
+
 
 @section scripts{
     <script type="text/javascript">

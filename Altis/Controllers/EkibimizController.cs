@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Altis.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Altis.Controllers
 {
     public class EkibimizController : Controller
     {
+        
         // GET: Ekibimiz
         public ActionResult Index()
         {

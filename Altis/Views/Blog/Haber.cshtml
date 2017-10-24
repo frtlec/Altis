@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Haber";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+
+<style>
+   
+</style>
+
+
+@model Altis.Models.HaberlerTB
+
+<div class="container ">
+    <div class="blog">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center">
+                            <div class="entry-meta">
+                                <span id="publish_date">@Model.EklenmeTarihi.ToShortDateString()</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown">
+                             <!-- <div class="recent-work-wrap">
+                              <img class="img-responsive" src="~/Content/images/haberler/@Model.OneCikanGorsel" alt=""
+                                <div class="overlay">
+                                    <div class="recent-work-inner">
+                                        <a class="preview" href="~/Content/images/haberler/@Model.OneCikanGorsel" rel="prettyPhoto"><i class="fa fa-eye"></i>Görseli Büyüt</a>
+                                    </div>
+                                </div>
+                            </div>>-->
+                            <h2><a href="#">@Model.HaberBaslik</a></h2>
+                            <hr />
+                            <div id="icerik">
+                                @Html.Raw(Model.HTML)
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
+        </div>
+    </div>
+</div>

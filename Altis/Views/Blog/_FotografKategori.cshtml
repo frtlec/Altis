@@ -1,0 +1,8 @@
+﻿@model List<Altis.Models.FotoKategori>
+<li><a class="btn btn-default active" href="#" data-filter="*">Tüm</a></li>
+
+@foreach (var item in Model)
+{
+
+    <li><a class="btn btn-default active" href="#" data-filter=".@item.FotoClass">@item.FotoKatAdi</a></li>
+}

@@ -17,10 +17,13 @@ namespace Altis.Models
         public int FotoID { get; set; }
         public string FotoBaslik { get; set; }
         public string FotoAciklama { get; set; }
+        public Nullable<int> FotoKategoriID { get; set; }
         public System.DateTime EklenmeTarihi { get; set; }
         public System.DateTime SonGuncelleme { get; set; }
+        public string FotoURLID { get; set; }
         public System.Guid UserID { get; set; }
     
         public virtual aspnet_Users aspnet_Users { get; set; }
+        public virtual FotoKategori FotoKategori { get; set; }
     }
 }

@@ -3,11 +3,50 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_blogLayout.cshtml";
 }
-@model  Altis.ViewModels.PageListForMakale
+@model IEnumerable<Altis.ViewModels.AllBlog>
 
 
-<section id="blog" class="container">
-<h2>Blog</h2>
 
 
-</section>
+<div id="ajax-main">
+
+    @Html.Partial("_Index")
+
+
+</div>
+
+
+
+
+@section  scripts{
+    <script>
+        var pageNo = 1;
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#Blog").attr("class", "active");
+        });
+        /*
+        $(window).scroll(function () {
+
+          
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                $.ajax({
+
+                    url: '/Blog/Index',
+                    data: { page: pageNo },
+                    success: function (data) {
+                        $("#ajax-main").append(data);
+                        pageNo++;
+                        console.log(data);
+                      
+                       
+                    }
+                })
+            }
+        });*/
+
+
+    </script>
+
+
+}

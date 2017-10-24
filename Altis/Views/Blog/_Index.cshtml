@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<Altis.ViewModels.AllBlog>
+
+@foreach (var item in Model)
+{<div class="blog blogindex">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center wow fadeInDown">
+                            <div class="entry-meta ">
+                                <span id="publish_date">@item.SonGuncelleme.ToShortDateString()</span>
+                                <h6 class="text-center" style="color:#808080"><i class="glyphicon glyphicon-time " style="color:black"></i>&nbsp;@item.SonGuncelleme.ToShortTimeString()</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown">
+                            <div class="recent-work-wrap">
+                             <img class="img-responsive img-blog" src="~/Content/images/@item.Kategori/@item.OneCikanGorsel"  alt="" />
+                                <div class="overlay">
+                                    <div class="recent-work-inner">
+                                        
+                                        <a class="preview" href="~/Content/images/@item.Kategori/@item.OneCikanGorsel" rel="prettyPhoto"><i class="fa fa-eye"></i>Görseli Büyüt</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h2><a href="blog-item.html">@item.Baslik</a></h2>
+                            <h3>@item.Onyazi</h3>
+                            @if (@item.Kategori != "Fotograf")
+                            {
+                                <a class="btn btn-primary readmore" href="/blog/@item.Kategori/@item.Id">Devamını Oku <i class="fa fa-angle-right"></i></a>
+                            }
+                   
+                        </div>
+                    </div>
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
+        </div>
+    </div>
+
+}

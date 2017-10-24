@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+<div class="row">
+    <div class="center wow fadeInDown">
+        <h2>Video</h2>
+        <p class="lead">Altis İletişim ve Genel Danışmanlık videoları...</p>
+    </div>
+</div>
+
+<div class='row' id="videoContent">
+
+
+    </div>
+
+
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+
+    @section  scripts{
+
+
+
+
+        <script>
+
+
+
+
+            $(document).ready(function () {
+
+
+
+
+
+                var youTubeURL = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUY3gZSBnGUgUfokXLrvH0rg&key=AIzaSyAOCeLWrcHa7b6N2MrSQhUy6CLfAmoataQ';
+
+                var json = null;
+                $.ajax({
+                    'async': false,
+                    'global': false,
+                    'url': youTubeURL,
+                    'dataType': "json",
+                    'success': function (data) {
+                       
+                      
+                        data.items.forEach(function (f) {
+                            
+                            
+                            var id = f.snippet.resourceId.videoId;
+                            $("#videoContent").append("<div class='col-sm-12 text-center'> <h3 id='videoTitle'>" + f.snippet.title + "</h3><hr /> <iframe width='80%' height='315' src='https://www.youtube.com/embed/" + id + "' frameborder='0' allowfullscreen></iframe> <hr /> <!--<div class='' id='videoDes' style='overflow:auto;height:65px;'> &nbsp;" + f.snippet.description + "</div>--><hr /></div >");
+                           
+
+                        });
+
+
+
+
+                    }
+                });
+
+
+
+                $("#Video").attr("class", "active");
+            });
+
+        </script>
+
+
+    }

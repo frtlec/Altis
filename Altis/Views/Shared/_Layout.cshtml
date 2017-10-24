@@ -15,9 +15,31 @@
     <link href="~/Content/css/animate.min.css" rel="stylesheet" />
     <link href="~/Content/css/prettyPhoto.css" rel="stylesheet" />
     <link href="~/Content/css/main.css" rel="stylesheet" />
-
+    <link href="~/Content/css/my.css" rel="stylesheet" />
     <link href="~/Content/css/responsive.css" rel="stylesheet" />
-  
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+
+    <style type="text/css">
+        .etkinlik > a {
+            background-color: #ff6a00 !important;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,blue), color-stop(100%,blue)) !important;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            border: 1px solid #333;
+            background-color: red;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 5100;
+            color: #ffd800;
+            font-size: 12px Arial;
+        }
+    </style>
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -26,6 +48,11 @@
    
 </head>
 <body>
+    <div class="loading">
+        <img src="~/Content/images/Spinner.gif" />
+    </div>
+
+
 
     <header id="header">
         <div class="top-bar">
@@ -35,7 +62,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-4">
                         <a class="glyphicon glyphicon-phone"></a> 
-                        <span style="color:#808080">+90(216)3689001</span>
+                        <span style="color:#808080;word-spacing:0.7px;">+90 (216) 368 90 01</span>
                     </div>
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
@@ -47,6 +74,12 @@
                                 <li><a href="https://www.youtube.com/channel/UCY3gZSBnGUgUfokXLrvH0rg"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="https://tr.pinterest.com/altisdanisman/"><i class="fa fa-pinterest"></i></a></li>
                             </ul>
+                           <div class="search">
+                               <form role="form">
+                                   <input type="text" class="search-form" autocomplete="off" placeholder="Ara">
+                                   <i class="fa fa-search" aria-hidden="true"></i>
+                               </form>
+                           </div>
                        </div>
                     </div>
                 </div>
@@ -62,7 +95,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://altis2.mikrooplazma.com/"><img src="~/Content/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="/"><img src="~/Content/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -71,44 +104,120 @@
                         <li id="Hakkimizda"><a href="/Hakkimizda" >Hakkımızda</a></li>
                         <li id="Hizmetlerimiz"><a href="/Hizmetlerimiz">Hizmetlerimiz</a></li>
                         <li id="Ekibimiz"><a href="/Ekibimiz">Ekibimiz</a></li>
-                        <li id="Blog"><a href="/Blog">Blog</a></li> 
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"  href="/Blog">
+                             Blog
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Blog/Foto">Fotoğraflar</a></li>
+                                <li><a href="/Blog/Video">Videolar</a></li>
+                                <li><a href="/Blog/Haberler">Haberler</a></li>
+                                <li><a href="/Blog/Makaleler">Makaleler</a></li>
+                                <li><a href="/Blog/Seminerler">Seminerler</a></li>
+
+                                <li><a href="/Blog/Etkinlikler">Etkinlikler</a></li>
+
+                            </ul>
+                        </li>
+                        
+                        
+                   
                         <li id="iletisim"><a href="/iletisim">İletişim</a></li>
-                         <li id="Katalog"><a href="/Katalog">Katalog</a></li>                       
+                         <li id="Katalog"><a href="~/Content/pdf/Altis-Hizmetiçi-Eğitim-Katalogu.pdf">Katalog</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
 		
     </header><!--/header-->
-    @RenderBody()
 
-  
+        @if (ViewBag.SideBar != null)
+        {
+            if (ViewBag.SideBar != "0")
+            {
+                <div class="container">
+                    <div class="col-sm-9">
 
-    <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2017 - <a>Altis | İletişim ve Genel Danışmanlık</a>
+                        @RenderBody()
+                    </div>
+
+                    <div class="col-sm-3">
+
+                        @Html.Partial("_SideBar")
+                    </div>
+
+                    </div>
+
+                    }
+                    else
+                    {
+                    @RenderBody()
+            }
+
+        }
+        else
+        {
+
+            <div class="container">
+                <br>
+                <br>
+                <div class="col-sm-9">
+
+                    @RenderBody()
                 </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="~Content/http://altis2.mikrooplazma.com/">Ana Sayfa</a></li>
-                        <li><a href="~Content/hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="~Content/http://altis3.mikrooplazma.com/">Blog</a></li>
-                        <li><a href="~Content/iletisim.html">İletişim</a></li>
-                    </ul>
+
+                
+                <div class="col-sm-3">
+                   @Html.Partial("_SideBar")
                 </div>
-            </div>
-        </div>
-    </footer><!--/#footer-->
+
+                </div>
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <footer id="footer" class="midnight-blue">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                &copy; 2017 - <a>Altis | İletişim ve Genel Danışmanlık</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="pull-right">
+                                    <li><a href="~Content/http://altis2.mikrooplazma.com/">Ana Sayfa</a></li>
+                                    <li><a href="~Content/hakkimizda.html">Hakkımızda</a></li>
+                                    <li><a href="~Content/http://altis3.mikrooplazma.com/">Blog</a></li>
+                                    <li><a href="~Content/iletisim.html">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer><!--/#footer-->
 </body>
 </html>
 <script src="~/Content/js/jquery.js"></script>
+@Scripts.Render("~/bundles/jqueryui")
 <script src="~/Content/js/bootstrap.min.js"></script>
 <script src="~/Content/js/jquery.prettyPhoto.js"></script>
 <script src="~/Content/js/jquery.isotope.min.js"></script>
-<script src="~/Content/js/myJs.js"></script>
+
 <script src="~/Content/js/main.js"></script>    
 <script src="~/Content/js/wow.min.js"></script>
+<script src="~/Content/js/main.js"></script>
 <script type="text/javascript" src="http://www.webkodu.com/kod-kaynak/yukari-cik/wk-yukari-cik-61.js"></script>
+<script src="~/Content/js/myJs.js"></script>
   @RenderSection("scripts", required: false)

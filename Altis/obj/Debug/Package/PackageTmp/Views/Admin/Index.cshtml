@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+
+<form action="/Admin" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kullanıcı Adı</label>
+        <input type="text" name="KullaniciAdi" value="" class="form-control" id="exampleInputEmail1" placeholder="Kullanıcı Adı giriniz" />
+
+
+    </div><!--Kullanıcı adı-->
+    <div class="form-group">
+        <label for="exampleInputEmail1">Parola</label>
+        <input type="text" name="parola" value="" min="3" class="form-control" id="exampleInputEmail1" placeholder="Parola giriniz" />
+
+
+    </div><!--Parola-->
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Ad Soyad</label>
+        <input type="text" name="Ad" value="" class="form-control" id="exampleInputEmail1" placeholder="Adınızı giriniz" />
+
+
+    </div><!-- adı Soyado-->
+    <div class="form-group">
+        <label for="exampleInputEmail1"> Ad Soyad</label>
+        <input type="text" name="Soyad" value="" class="form-control" id="exampleInputEmail1" placeholder="Adınızı giriniz" />
+
+
+    </div><!-- adı Soyado-->
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email Adı</label>
+        <input type="text" name="email" value="" class="form-control" id="exampleInputEmail1" placeholder="Email giriniz" />
+
+
+    </div><!--Email-->
+    <div class="form-group">
+        <label for="exampleInputEmail1">Gizli Soru:</label>
+        <input type="text" name="GizliSoru" value="" class="form-control" id="exampleInputEmail1" placeholder="Gizli soru giriniz" />
+
+    </div><!--Gizli Soru-->
+    <div class="form-group">
+        <label for="exampleInputEmail1">Gizli yanıt:</label>
+        <input type="text" name="GizliCevap" value="" class="form-control" id="exampleInputEmail1" placeholder="Gizli cevap giriniz" />
+
+
+    </div><!--G. Yanıt-->
+
+    <input type="submit" value="Kaydet" />
+
+
+</form>
+

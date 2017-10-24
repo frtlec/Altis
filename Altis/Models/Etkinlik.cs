@@ -16,10 +16,14 @@ namespace Altis.Models
     {
         public int EtkinlikID { get; set; }
         public string EtkinlikBaslik { get; set; }
+        public string HTML { get; set; }
+        public string OneCikanGorsel { get; set; }
+        public string EtkinlikAciklama { get; set; }
+        public Nullable<System.DateTime> EklenmeTarihi { get; set; }
+        public Nullable<System.DateTime> SonGuncelleme { get; set; }
         public string Adres { get; set; }
         public string Tel { get; set; }
         public System.DateTime Zaman { get; set; }
-        public string EtkinlikAciklama { get; set; }
         public System.Guid UserID { get; set; }
     
         public virtual aspnet_Users aspnet_Users { get; set; }

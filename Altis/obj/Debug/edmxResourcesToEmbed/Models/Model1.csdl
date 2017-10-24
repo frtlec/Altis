@@ -128,6 +128,8 @@
     <NavigationProperty Name="Etkinlik" Relationship="AltisModel.FK_Etkinlik_aspnet_Users" FromRole="aspnet_Users" ToRole="Etkinlik" />
     <NavigationProperty Name="Fotograf" Relationship="AltisModel.FK_Fotograf_aspnet_Users" FromRole="aspnet_Users" ToRole="Fotograf" />
     <NavigationProperty Name="HaberlerTB" Relationship="AltisModel.FK_HaberlerTB_aspnet_Users" FromRole="aspnet_Users" ToRole="HaberlerTB" />
+    <NavigationProperty Name="SeminerTB" Relationship="AltisModel.FK_SeminerTB_aspnet_Users" FromRole="aspnet_Users" ToRole="SeminerTB" />
+    <NavigationProperty Name="FotoKategori" Relationship="AltisModel.FK_FotoKategori_aspnet_Users" FromRole="aspnet_Users" ToRole="FotoKategori" />
   </EntityType>
   <EntityType Name="aspnet_WebEvent_Events">
     <Key>
@@ -161,17 +163,6 @@
     <Property Name="EtkinlikAciklama" Type="String" MaxLength="3450" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="UserID" Type="Guid" Nullable="false" />
     <NavigationProperty Name="aspnet_Users" Relationship="AltisModel.FK_Etkinlik_aspnet_Users" FromRole="Etkinlik" ToRole="aspnet_Users" />
-  </EntityType>
-  <EntityType Name="Seminer">
-    <Key>
-      <PropertyRef Name="SeminerID" />
-    </Key>
-    <Property Name="SeminerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="SeminerBaslik" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Zaman" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="SeminerAciklama" Type="String" MaxLength="450" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="UserID" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -313,7 +304,6 @@
     <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" />
     <EntitySet Name="aspnet_WebEvent_Events" EntityType="Self.aspnet_WebEvent_Events" />
     <EntitySet Name="Etkinlik" EntityType="Self.Etkinlik" />
-    <EntitySet Name="Seminer" EntityType="Self.Seminer" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Yazar" EntityType="Self.Yazar" />
     <AssociationSet Name="FK__aspnet_Me__Appli__2D27B809" Association="Self.FK__aspnet_Me__Appli__2D27B809">
@@ -375,6 +365,21 @@
       <End Role="aspnet_Users" EntitySet="aspnet_Users" />
       <End Role="HaberlerTB" EntitySet="HaberlerTB" />
     </AssociationSet>
+    <EntitySet Name="Hizmetlerimiz" EntityType="AltisModel.Hizmetlerimiz" />
+    <EntitySet Name="SeminerTB" EntityType="AltisModel.SeminerTB" />
+    <AssociationSet Name="FK_SeminerTB_aspnet_Users" Association="AltisModel.FK_SeminerTB_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="SeminerTB" EntitySet="SeminerTB" />
+    </AssociationSet>
+    <EntitySet Name="FotoKategori" EntityType="AltisModel.FotoKategori" />
+    <AssociationSet Name="FK_FotoKategori_aspnet_Users" Association="AltisModel.FK_FotoKategori_aspnet_Users">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="FotoKategori" EntitySet="FotoKategori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Fotograf_FotoKategori" Association="AltisModel.FK_Fotograf_FotoKategori">
+      <End Role="FotoKategori" EntitySet="FotoKategori" />
+      <End Role="Fotograf" EntitySet="Fotograf" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="MakalelerTB">
     <Key>
@@ -425,6 +430,9 @@
     <Property Name="SonGuncelleme" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="UserID" Type="Guid" Nullable="false" />
     <NavigationProperty Name="aspnet_Users" Relationship="AltisModel.FK_Fotograf_aspnet_Users" FromRole="Fotograf" ToRole="aspnet_Users" />
+    <Property Name="FotoURLID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FotoKategoriID" Type="Int32" />
+    <NavigationProperty Name="FotoKategori" Relationship="AltisModel.FK_Fotograf_FotoKategori" FromRole="Fotograf" ToRole="FotoKategori" />
   </EntityType>
   <EntityType Name="HaberlerTB">
     <Key>
@@ -438,6 +446,7 @@
     <Property Name="SonGuncelleme" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="UserID" Type="Guid" Nullable="false" />
     <NavigationProperty Name="aspnet_Users" Relationship="AltisModel.FK_HaberlerTB_aspnet_Users" FromRole="HaberlerTB" ToRole="aspnet_Users" />
+    <Property Name="HaberAciklama" Type="String" MaxLength="3540" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_Fotograf_aspnet_Users">
     <End Type="AltisModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
@@ -460,6 +469,82 @@
       </Principal>
       <Dependent Role="HaberlerTB">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Hizmetlerimiz">
+    <Key>
+      <PropertyRef Name="HizmetlerimizID" />
+    </Key>
+    <Property Name="HizmetlerimizID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="HTML" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OneCikanGorsel" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SeminerTB">
+    <Key>
+      <PropertyRef Name="SeminerID" />
+    </Key>
+    <Property Name="SeminerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeminerBaslik" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SeminerAciklama" Type="String" Nullable="false" MaxLength="3950" FixedLength="false" Unicode="true" />
+    <Property Name="Yer" Type="String" Nullable="false" MaxLength="3950" FixedLength="false" Unicode="true" />
+    <Property Name="Zaman" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="aspnet_Users" Relationship="AltisModel.FK_SeminerTB_aspnet_Users" FromRole="SeminerTB" ToRole="aspnet_Users" />
+    <Property Name="HTML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OneCikanGorsel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EklenmeTarih" Type="DateTime" Precision="0" Nullable="false" />
+    <Property Name="SonGuncelleme" Type="DateTime" Precision="0" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_SeminerTB_aspnet_Users">
+    <End Type="AltisModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="AltisModel.SeminerTB" Role="SeminerTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SeminerTB">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FotoKategori">
+    <Key>
+      <PropertyRef Name="FotoKategoriID" />
+    </Key>
+    <Property Name="FotoKategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FotoClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FotoKatAdi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FotoKatAciklama" Type="String" Nullable="false" MaxLength="3950" FixedLength="false" Unicode="true" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="aspnet_Users" Relationship="AltisModel.FK_FotoKategori_aspnet_Users" FromRole="FotoKategori" ToRole="aspnet_Users" />
+    <NavigationProperty Name="Fotograf" Relationship="AltisModel.FK_Fotograf_FotoKategori" FromRole="FotoKategori" ToRole="Fotograf" />
+    <Property Name="Data" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_FotoKategori_aspnet_Users">
+    <End Type="AltisModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="AltisModel.FotoKategori" Role="FotoKategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="FotoKategori">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Fotograf_FotoKategori">
+    <End Type="AltisModel.FotoKategori" Role="FotoKategori" Multiplicity="0..1" />
+    <End Type="AltisModel.Fotograf" Role="Fotograf" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FotoKategori">
+        <PropertyRef Name="FotoKategoriID" />
+      </Principal>
+      <Dependent Role="Fotograf">
+        <PropertyRef Name="FotoKategoriID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

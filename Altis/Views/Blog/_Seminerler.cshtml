@@ -1,0 +1,52 @@
+﻿@model Altis.ViewModels.PageListForSeminer
+@using PagedList;
+@using PagedList.Mvc;
+@foreach (var item in Model.SeminerPageList)
+{
+    <div class="blog seminer">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center wow fadeInDown ">
+                            <div class="entry-meta">
+                                <span id="publish_date">@item.EklenmeTarih.ToShortDateString()</span>
+                               
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown">
+
+                            <div class="recent-work-wrap">
+                                <img class="img-responsive" src="~/Content/images/seminer/@item.OneCikanGorsel" alt="">
+                                <div class="overlay">
+                                    <div class="recent-work-inner">
+                                        <a class="preview" href="~/Content/images/seminer/@item.OneCikanGorsel" rel="prettyPhoto"><i class="fa fa-eye"></i>Görseli Büyüt</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <h2><a href="/Blog/Seminer/@item.SeminerID">@item.SeminerBaslik</a></h2>
+                            
+                            <p>@item.SeminerAciklama</p>
+                            <a class="btn btn-primary readmore" href="/Blog/Seminer/@item.SeminerID">Devamını Oku <i class="fa fa-angle-right"></i></a>
+                        </div>
+
+                    </div>
+                    <hr />
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
+        </div>
+    </div>
+
+
+}
+@Html.PagedListPager(Model.SeminerPageList, page => Url.Action("Seminerler", new RouteValueDictionary{
+    { "Page",page}
+
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions
+    {
+        UpdateTargetId = "ajax-main"
+
+    }))

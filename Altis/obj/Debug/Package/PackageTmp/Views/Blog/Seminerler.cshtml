@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Seminerler";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+
+@model Altis.ViewModels.PageListForSeminer
+  <section id="blog" class="container">
+
+
+    <div id="ajax-main">
+        @Html.Partial("_Seminerler", @Model)
+    </div>
+
+
+
+</section>
+
+
+
+
+
+@section  scripts{
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#Seminer").attr("class", "active");
+        });
+
+    </script>
+
+
+}

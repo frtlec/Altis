@@ -1,0 +1,68 @@
+﻿<div class="hiza">
+
+</div>
+
+
+
+
+<div class="row">
+    <br>
+
+    <form class="navbar-form" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Ara">
+        </div>
+        <button type="submit" class="btn btn-default text-center">
+            <a class="glyphicon glyphicon-search"></a>
+
+        </button>
+    </form>
+
+    <!--/.search-->
+    <br>
+    <hr>
+</div>
+<div class="row">
+
+    <div class="sidebarpadding">
+        <button onclick="parent.location='https://drive.google.com/file/d/0B69Tmv7eKRhjVW44M1lsZ1FXaHc'" data-anchor="" class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+            <span class="screen-reader-text">Kataloğu İncele</span>
+        </button>
+    </div>
+    <br>
+
+    <hr>
+</div>
+<div class="row">
+    <div class="sidebarpadding">
+        <form action="/Blog/MailKayit" method="post">
+            <h3>&nbsp;E-Posta Aboneliği</h3>
+        
+                <input type="checkbox"  name="aile" value="aile"><span>Aile</span>
+                <input type="checkbox"   name="ogrenci" value="ogrenci"><span>Öğrenci</span>
+                <input type="checkbox"   name="uzman" value="uzman"><span>Uzman</span>
+                <input type="checkbox"  name="diger" value="diger"><span>Diğer</span>
+        
+            <br/>
+            <br />
+          
+            <input type="text" name="email" class="form-control" placeholder="E-Mail adresiniz.">
+            
+            
+            <input type="submit" value="Kayit ol" class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+        </form>
+
+    </div>
+
+    <br>
+
+    <hr>
+
+</div>
+<div class="row">
+    <div class="sidebarpadding">
+      <h3>&nbsp;Etkinlik Takvimi</h3>
+
+        @Html.Action("takvim", "blog")
+    </div>
+</div>

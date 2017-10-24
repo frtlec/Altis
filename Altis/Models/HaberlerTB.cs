@@ -16,7 +16,8 @@ namespace Altis.Models
     {
         public int HaberID { get; set; }
         public string HaberBaslik { get; set; }
-        public string HaberIcerik { get; set; }
+        public string HaberOnyazi { get; set; }
+        public string HTML { get; set; }
         public string OneCikanGorsel { get; set; }
         public System.DateTime EklenmeTarihi { get; set; }
         public System.DateTime SonGuncelleme { get; set; }

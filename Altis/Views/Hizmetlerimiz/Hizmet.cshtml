@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Hizmet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Altis.Models.Hizmetlerimiz
+<div id="hizmet">
+    <h2 class="text-center">@Model.Baslik</h2>
+    <div class="row">
+        @Html.Raw(Model.HTML)
+
+
+    </div>
+    <br />
+
+
+</div>

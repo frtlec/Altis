@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Altis.Controllers
 {
+    [OutputCache(Duration = 360)]
     public class ErrorPageController : Controller
     {
         // GET: ErrorPage

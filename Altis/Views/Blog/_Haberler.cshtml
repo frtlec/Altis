@@ -1,0 +1,49 @@
+﻿@model Altis.ViewModels.PageListForHaber
+@using PagedList;
+@using PagedList.Mvc;
+@foreach (var item in Model.haberlerPageList)
+{
+    <div class="blog haberler">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2 text-center wow fadeInDown">
+                            <div class="entry-meta">
+                                <span id="publish_date">@item.EklenmeTarihi.ToShortDateString()</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-10 blog-content wow fadeInDown">
+                           
+                                <div class="recent-work-wrap">
+                                    <img class="img-responsive" src="~/Content/images/haber/@item.OneCikanGorsel" alt="">
+                                    <div class="overlay">
+                                        <div class="recent-work-inner">
+                                            <a class="preview" href="~/Content/images/haber/@item.OneCikanGorsel" rel="prettyPhoto"><i class="fa fa-eye"></i>Görseli Büyüt</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            <h2><a href="/Blog/Makaleler/@item.HaberID">@item.HaberBaslik</a></h2>
+                            <h3>@item.HaberAciklama</h3>
+                            <a class="btn btn-primary readmore" href="/blog/Haber/@item.HaberID">Devamını Oku <i class="fa fa-angle-right"></i></a>
+                        </div>
+                      
+                    </div>
+                    <hr />
+                </div><!--/.blog-item-->
+            </div><!--/.col-md-8-->
+        </div>
+    </div>
+    
+
+}
+@Html.PagedListPager(Model.haberlerPageList, page => Url.Action("Makaleler", new RouteValueDictionary{
+    { "Page",page}
+
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions
+    {
+        UpdateTargetId = "ajax-main"
+
+    }))

@@ -148,18 +148,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Seminer">
-      <EntityTypeMapping TypeName="AltisModel.Seminer">
-        <MappingFragment StoreEntitySet="Seminer">
-          <ScalarProperty Name="SeminerID" ColumnName="SeminerID" />
-          <ScalarProperty Name="SeminerBaslik" ColumnName="SeminerBaslik" />
-          <ScalarProperty Name="Adres" ColumnName="Adres" />
-          <ScalarProperty Name="Zaman" ColumnName="Zaman" />
-          <ScalarProperty Name="SeminerAciklama" ColumnName="SeminerAciklama" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="AltisModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -203,6 +191,8 @@
     <EntitySetMapping Name="Fotograf">
       <EntityTypeMapping TypeName="AltisModel.Fotograf">
         <MappingFragment StoreEntitySet="Fotograf">
+          <ScalarProperty Name="FotoKategoriID" ColumnName="FotoKategoriID" />
+          <ScalarProperty Name="FotoURLID" ColumnName="FotoURLID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="SonGuncelleme" ColumnName="SonGuncelleme" />
           <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
@@ -215,6 +205,7 @@
     <EntitySetMapping Name="HaberlerTB">
       <EntityTypeMapping TypeName="AltisModel.HaberlerTB">
         <MappingFragment StoreEntitySet="HaberlerTB">
+          <ScalarProperty Name="HaberAciklama" ColumnName="HaberAciklama" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="SonGuncelleme" ColumnName="SonGuncelleme" />
           <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
@@ -222,6 +213,46 @@
           <ScalarProperty Name="HaberIcerik" ColumnName="HaberIcerik" />
           <ScalarProperty Name="HaberBaslik" ColumnName="HaberBaslik" />
           <ScalarProperty Name="HaberID" ColumnName="HaberID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hizmetlerimiz">
+      <EntityTypeMapping TypeName="AltisModel.Hizmetlerimiz">
+        <MappingFragment StoreEntitySet="Hizmetlerimiz">
+          <ScalarProperty Name="OneCikanGorsel" ColumnName="OneCikanGorsel" />
+          <ScalarProperty Name="HTML" ColumnName="HTML" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="HizmetlerimizID" ColumnName="HizmetlerimizID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeminerTB">
+      <EntityTypeMapping TypeName="AltisModel.SeminerTB">
+        <MappingFragment StoreEntitySet="SeminerTB">
+          <ScalarProperty Name="SonGuncelleme" ColumnName="SonGuncelleme" />
+          <ScalarProperty Name="EklenmeTarih" ColumnName="EklenmeTarih" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="OneCikanGorsel" ColumnName="OneCikanGorsel" />
+          <ScalarProperty Name="HTML" ColumnName="HTML" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Zaman" ColumnName="Zaman" />
+          <ScalarProperty Name="Yer" ColumnName="Yer" />
+          <ScalarProperty Name="SeminerAciklama" ColumnName="SeminerAciklama" />
+          <ScalarProperty Name="SeminerBaslik" ColumnName="SeminerBaslik" />
+          <ScalarProperty Name="SeminerID" ColumnName="SeminerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FotoKategori">
+      <EntityTypeMapping TypeName="AltisModel.FotoKategori">
+        <MappingFragment StoreEntitySet="FotoKategori">
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="FotoKatAciklama" ColumnName="FotoKatAciklama" />
+          <ScalarProperty Name="FotoKatAdi" ColumnName="FotoKatAdi" />
+          <ScalarProperty Name="FotoClass" ColumnName="FotoClass" />
+          <ScalarProperty Name="FotoKategoriID" ColumnName="FotoKategoriID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

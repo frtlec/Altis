@@ -1,0 +1,283 @@
+﻿
+
+
+/* altAlan yukseligi ile ayni olmali */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 9rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: rgb(242, 242, 242);
+}
+.loading {
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    text-align: center;
+    -moz-appearance: none;
+}
+.loading img{
+    margin-top:20%;
+    width:5%;
+    
+}
+#successmesaj{
+
+    color:#ff6a00;
+}
+.dropdown-menu {
+}
+.container {
+    padding: 0px !important;
+}
+
+.ppt {
+    display: none !important;
+}
+
+
+
+/**
+ * Footer Styles
+ */
+.search i {
+    color: #F06021;
+}
+.search-form::-webkit-input-placeholder {
+   
+    color:#808080 !important;
+}
+.search-form {
+    background: white !important;
+}
+
+#footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.hiza{
+
+    margin-top:75px;
+}
+.sidebarpadding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.sidebarpadding span{
+    font-size:15px;
+
+}
+.w3-radio {
+    width: 14px !important;
+}
+
+
+
+#videoDes {
+    border-left:1.5px dashed #c3c3c3;
+    
+    padding:15px;
+}
+
+#videoDes::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+
+}
+
+    #videoDes::-webkit-scrollbar {
+        width: 15px;
+        background-color: #F5F5F5;
+    }
+
+
+#videoDes::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+   
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #F06021;
+}
+#myCarousel .carousel-control {
+    width: inherit !important;
+}
+
+    #myCarousel .carousel-control .left i {
+        left:-15px !important;
+    }
+
+    #myCarousel .carousel-control .right i {
+        right:-15px !important;
+    }
+
+    #myCarousel .carousel-control.left {
+        left: 145px !important;
+        background: none !important;
+        color: #F06021 !important;
+        opacity:1;
+    }
+    #myCarousel .carousel-control.right {
+        right: 145px !important;
+        background: none !important;
+        color: #F06021 !important;
+        opacity: 1;
+    }
+#middle p{
+    font-size:16px;
+
+
+}
+#middle label{
+    color:red;
+}
+
+
+.mytable tr>td{
+    
+    color:#808080;
+    font-size:16px;
+    font-weight:400;
+}
+/*Makaleler*/
+.Makaleler img{
+    width:40%;
+}
+.makaleicerik img {
+    float: left;
+    margin: 3px 14px 0 0;
+    width: 40%;
+}
+
+
+.Makaleler .recent-work-wrap .overlay {
+    width: 40% !important;
+}
+
+.haberler .recent-work-wrap img {
+    width: 200px !important;
+    /*seminer*/
+}
+#seminer a {
+    font-size: 15px;
+    color: #F06021;
+}
+
+/*Haberler*/
+.habericerik img {
+    float: left;
+    margin: 3px 14px 0 0;
+    width: 200px;
+}
+
+.haberbaslik h2 {
+}
+.haberler .recent-work-wrap .overlay {
+    width: 200px !important;
+}
+.haberler .recent-work-wrap img {
+    width: 200px !important;
+}
+/*Blog İndex*/
+.blogindex img {
+    width: 40%;
+ 
+}
+.blogindex h2 {
+}
+
+.blogindex .recent-work-wrap .overlay {
+    width: 40%;
+}
+
+.blogindex .recent-work-wrap img {
+    width: 40%;
+}
+
+/*Seminer */
+
+.seminer img {
+    width: 40%;
+}
+
+.seminer h2 {
+}
+
+.seminer .recent-work-wrap .overlay {
+    width: 40%;
+}
+
+.seminer .recent-work-wrap img {
+    width: 40%;
+}
+/*Etkinlik*/
+
+.etkinlik img {
+    width: 40%;
+}
+
+.etkinlik h2 {
+}
+
+.etkinlik .recent-work-wrap .overlay {
+    width: 40%;
+}
+
+.etkinlik .recent-work-wrap img {
+    width: 40%;
+}
+.gmap {
+    width: 400px;
+    height: 400px;
+}
+.gmap-area .gmap iframe {
+    width: 400px;
+    height: 400px;
+}
+
+
+@media screen and (min-width: 960px) {
+    .dropdown-menu {
+        margin-top: -25px !important;
+    }
+}
+@media screen and (min-width:412px){
+    .top-bar {
+        position: fixed !important;
+        bottom: 0 !important;
+        display:none !important;
+    }
+
+}
+@media screen and (min-width:360px) {
+    .top-bar {
+        position: fixed !important;
+        bottom: 0 !important;
+        display: none !important;
+    }
+    #topcontrol{
+
+    }
+}
+
+/* this targets the default scrollbar (compulsory) */

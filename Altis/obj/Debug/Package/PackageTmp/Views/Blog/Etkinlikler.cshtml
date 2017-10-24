@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Etkinlik";
+    Layout = "~/Views/Shared/_blogLayout.cshtml";
+}
+
+@model List<Altis.Models.Etkinlik>
+<section id="seminer">
+    <div class="center wow fadeInDown">
+        <h2 class="text-center">Etkinlikler</h2>
+        <p class="lead">Gelecek Etkinlikler...</p>
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-sm-4">
+
+                <a href="/Blog/Seminer/@item.EtkinlikID"><i class="fa fa-arrow-right" aria-hidden="true" style="color:black;"></i>&nbsp;@item.EtkinlikBaslik</a>
+
+            </div>
+
+
+
+        </div>
+    }
+
+</section>
+
+
+
+@section  scripts{
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#Etkinlik").attr("class", "active");
+        });
+
+    </script>
+
+
+}

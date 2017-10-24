@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="TR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="altis, psikoloji, kurumsal, danışmanlık, seminer, öğrenme güçlüğü, dikkat eksikliği, disleksi, hiperaktivite, aşırı hareketlilik, üstün yetenek, üstün zeka, gelişim geriliği, unutkanlık, demans, alzheimer, aile terapisi, oyun terapisi, nöropsikoloji, baş ağrısı, nöroloji, davranış bozukluğu, parkinson, epilepsi " />
+    <meta name="description" content="Altis; Çocuk, genç, yetişkin ve yaşlılık dönemlerinde karşılaşılabilecek öğrenme, dikkat, zihinsel gelişim, unutma sorunları,  aile ve sosyal ilişkiler konularında çalışmalarını sürdürmektedir. Sitede ayrıntılı bilgilere ulaşabilirsiniz.">
+    <meta name="author" content="lefistanbul">
+    <title>@ViewBag.Title | Altis İletişim ve Genel Danışmanlık</title>
+
+    <!-- core CSS -->
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link href="~/Content/css/my.css" rel="stylesheet" />
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+
+    <style type="text/css">
+        .etkinlik > a {
+            background-color: #ff6a00 !important;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,blue), color-stop(100%,blue)) !important;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            border: 1px solid #333;
+            background-color: red;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 5100;
+            color: #ffd800;
+            font-size: 12px Arial;
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="~/Content/images/ico/favicon.png">
+   
+</head>
+<body>
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+          
+
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <a class="glyphicon glyphicon-phone"></a> 
+                        <span style="color:#808080;word-spacing:0.7px;">+90 (216) 368 90 01</span>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/altisdanisman/"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/altisdanisman"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/altisdanisman"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://tr.linkedin.com/in/altis-dan%C4%B1%C5%9Fmanl%C4%B1k-35a308b2"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="https://www.youtube.com/channel/UCY3gZSBnGUgUfokXLrvH0rg"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://tr.pinterest.com/altisdanisman/"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                           <div class="search">
+                               <form role="form">
+                                   <input type="text" class="search-form" autocomplete="off" placeholder="Ara">
+                                   <i class="fa fa-search" aria-hidden="true"></i>
+                               </form>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="~/Content/images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li id="Anasayfa"><a href="/" >Ana Sayfa</a></li>
+                        <li id="Hakkimizda"><a href="/Hakkimizda" >Hakkımızda</a></li>
+                        <li id="Hizmetlerimiz"><a href="/Hizmetlerimiz">Hizmetlerimiz</a></li>
+                        <li id="Ekibimiz"><a href="/Ekibimiz">Ekibimiz</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle"  href="/Blog">
+                             Blog
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Blog/Foto">Fotoğraflar</a></li>
+                                <li><a href="/Blog/Video">Videolar</a></li>
+                                <li><a href="/Blog/Haberler">Haberler</a></li>
+                                <li><a href="/Blog/Makaleler">Makaleler</a></li>
+                                <li><a href="/Blog/Seminerler">Seminerler</a></li>
+
+                                <li><a href="/Blog/Etkinlikler">Etkinlikler</a></li>
+
+                            </ul>
+                        </li>
+                        
+                        
+                        </li> 
+                        <li id="iletisim"><a href="/iletisim">İletişim</a></li>
+                         <li id="Katalog"><a href="/Katalog">Katalog</a></li>                       
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+        @if (ViewBag.SideBar != null)
+        {
+            if (ViewBag.SideBar != "0")
+            {
+                <div class="container">
+                    <div class="col-sm-9">
+
+                        @RenderBody()
+                    </div>
+
+                    <div class="col-sm-3">
+
+                        @Html.Partial("_SideBar")
+                    </div>
+
+                    </div>
+
+                    }
+                    else
+                    {
+                    @RenderBody()
+            }
+
+        }
+        else
+        {
+
+            <div class="container">
+                <br>
+                <br>
+                <div class="col-sm-9">
+
+                    @RenderBody()
+                </div>
+
+                
+                <div class="col-sm-3">
+                   @Html.Partial("_SideBar")
+                </div>
+
+                </div>
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <footer id="footer" class="midnight-blue">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                &copy; 2017 - <a>Altis | İletişim ve Genel Danışmanlık</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="pull-right">
+                                    <li><a href="~Content/http://altis2.mikrooplazma.com/">Ana Sayfa</a></li>
+                                    <li><a href="~Content/hakkimizda.html">Hakkımızda</a></li>
+                                    <li><a href="~Content/http://altis3.mikrooplazma.com/">Blog</a></li>
+                                    <li><a href="~Content/iletisim.html">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer><!--/#footer-->
+</body>
+</html>
+<script src="~/Content/js/jquery.js"></script>
+@Scripts.Render("~/bundles/jqueryui")
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/jquery.prettyPhoto.js"></script>
+<script src="~/Content/js/jquery.isotope.min.js"></script>
+
+<script src="~/Content/js/main.js"></script>    
+<script src="~/Content/js/wow.min.js"></script>
+<script src="~/Content/js/main.js"></script>
+<script type="text/javascript" src="http://www.webkodu.com/kod-kaynak/yukari-cik/wk-yukari-cik-61.js"></script>
+<script src="~/Content/js/myJs.js"></script>
+  @RenderSection("scripts", required: false)
